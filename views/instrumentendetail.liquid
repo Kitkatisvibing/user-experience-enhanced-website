@@ -1,0 +1,13 @@
+{% render 'partials/head.liquid' %}
+<header>
+<img src="../assets/logo.svg">
+</header>
+
+<h1>{{ instrument.name }}</h1>
+<h2>{{ instrument.instrument }}</h2>
+<img src="https://fdnd-agency.directus.app/assets/{{ instrument.photo }}" alt="{{ instrument.name }}">
+<p>Status: {{ instrument.status | default:"Status onbekend"}}</p>
+<p>Merk: {{ instrument.brand | default:"Onbekend"}}</p>
+<p>Serie nummer: {{ instrument.serial_number | default:"Onbekend"}}</p>
+
+{% render 'partials/foot.liquid' %}

@@ -1,0 +1,27 @@
+{% render 'partials/head.liquid' %}
+<header>
+<img src="../assets/logo.svg">
+</header>
+
+  <body class="list">
+    {% for instrument in instrumenten %}
+
+        <ul>
+            <li>
+                <ul>
+                    <li>
+                        <h2>{{ instrument.name }}</h2>
+                    </li>
+
+                    <li>
+                        <p>{{ instrument.status | default:"Status onbekend" }}</p>
+                    </li>
+
+                    <li><a href="/instrumenten/{{ instrument.key }}">Details instrument</a></li>
+                </ul>
+            </li>
+        </ul>
+    {% endfor %}
+  </body>
+
+{% render 'partials/foot.liquid' %}
