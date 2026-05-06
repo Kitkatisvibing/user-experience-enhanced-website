@@ -52,6 +52,36 @@ app.get('/instrumenten/:key', async function (request, response) {
   })
 })
 
+app.get('/uitlenen/:key', async function (request, response) {
+
+  const instrumentResponse = await fetch('https://fdnd-agency.directus.app/items/preludefonds_instruments/?filter[key]=' + request.params.key)
+  const instrumentResponseJSON = await instrumentResponse.json()
+
+  response.render('uitlenen.liquid', {
+    instrument: instrumentResponseJSON.data[0]
+  })
+})
+
+app.get('/innemen/:key', async function (request, response) {
+
+  const instrumentResponse = await fetch('https://fdnd-agency.directus.app/items/preludefonds_instruments/?filter[key]=' + request.params.key)
+  const instrumentResponseJSON = await instrumentResponse.json()
+
+  response.render('innemen.liquid', {
+    instrument: instrumentResponseJSON.data[0]
+  })
+})
+
+app.get('/schade/:key', async function (request, response) {
+
+  const instrumentResponse = await fetch('https://fdnd-agency.directus.app/items/preludefonds_instruments/?filter[key]=' + request.params.key)
+  const instrumentResponseJSON = await instrumentResponse.json()
+
+  response.render('schade.liquid', {
+    instrument: instrumentResponseJSON.data[0]
+  })
+})
+
 
 
 

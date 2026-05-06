@@ -9,5 +9,15 @@
 <p>Status: {{ instrument.status | default:"Status onbekend"}}</p>
 <p>Merk: {{ instrument.brand | default:"Onbekend"}}</p>
 <p>Serie nummer: {{ instrument.serial_number | default:"Onbekend"}}</p>
+<p>Locatie: {{ instruments.storage_room | default: "Onbekend" }}</p>
+
+<section class="instrumentEdit">
+    {% if instruments.status == 'Beschikbaar' %}
+        <a href="/uitlenen/{{ instrument.key }}">Uitlenen</a> 
+    {% else %}
+        <a href="/innemen/{{ instrument.key }}">Innemen</a>
+    {% endif %}
+    <a href="/schade/{{ instrument.key }}">Schade melden</a>
+</section>
 
 {% render 'partials/foot.liquid' %}

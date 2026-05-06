@@ -56,3 +56,14 @@ ul{
 img{
     width: 20vw;
 }
+
+.instrumentEdit{
+    a{
+    background-color: #c49bce;
+    color: #1f0339;
+    width: 15vw;
+    height: 5em;
+    border-radius: 50em;
+    text-align: center;
+    }
+}
