@@ -51,6 +51,11 @@ ul{
         border-radius: 2em;
         width: 15vw;
     }
+
+
+    img{
+        width: 5em;
+    }
 }
 
 img{
